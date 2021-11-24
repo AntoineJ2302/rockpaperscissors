@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    height: 100vh;
+    background-image: linear-gradient(238deg, rgba(70, 70, 70, 0.09) 0%, rgba(70, 70, 70, 0.09) 50%,rgba(214, 214, 214, 0.09) 50%, rgba(214, 214, 214, 0.09) 100%),linear-gradient(126deg, rgba(223, 223, 223, 0.05) 0%, rgba(223, 223, 223, 0.05) 50%,rgba(217, 217, 217, 0.05) 50%, rgba(217, 217, 217, 0.05) 100%),linear-gradient(152deg, rgba(116, 116, 116, 0.08) 0%, rgba(116, 116, 116, 0.08) 50%,rgba(248, 248, 248, 0.08) 50%, rgba(248, 248, 248, 0.08) 100%),linear-gradient(225deg, rgba(1, 1, 1, 0.07) 0%, rgba(1, 1, 1, 0.07) 50%,rgba(5, 5, 5, 0.07) 50%, rgba(5, 5, 5, 0.07) 100%),linear-gradient(194deg, rgba(14, 14, 14, 0.09) 0%, rgba(14, 14, 14, 0.09) 50%,rgba(206, 206, 206, 0.09) 50%, rgba(206, 206, 206, 0.09) 100%),linear-gradient(100deg, rgba(220, 220, 220, 0.07) 0%, rgba(220, 220, 220, 0.07) 50%,rgba(65, 65, 65, 0.07) 50%, rgba(65, 65, 65, 0.07) 100%),linear-gradient(190deg, rgba(194, 194, 194, 0.03) 0%, rgba(194, 194, 194, 0.03) 50%,rgba(206, 206, 206, 0.03) 50%, rgba(206, 206, 206, 0.03) 100%),linear-gradient(320deg, rgba(10, 10, 10, 0.08) 0%, rgba(10, 10, 10, 0.08) 50%,rgba(231, 231, 231, 0.08) 50%, rgba(231, 231, 231, 0.08) 100%),linear-gradient(90deg, rgb(10, 147, 39),rgb(235, 252, 123));;
+    font-family: 'Luckiest Guy', cursive;
+}
+
+.score {
+    color: rgb(233, 227, 227);
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.score h2 {
+    font-size: 30px;
+}
+
+.score p {
+    text-align: center;
+    padding: 10px;
+    font-size: 25px;
+}
+
+.intro {
+    color: rgb(233, 227, 227); 
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: opacity 1s ease;
+}
+
+.intro h1 {
+    font-size: 50px;
+}
+
+.intro button,
+.match button {
+    width: 250px;
+    height: 125px;
+    background: none;
+    color: rgb(233, 227, 227);  
+    font-size: 45px;
+    font-family: 'Luckiest Guy', cursive;
+    background-image: radial-gradient(circle at center center, transparent,rgb(33,33,33)),repeating-linear-gradient(135deg, rgb(33,33,33) 0px, rgb(33,33,33) 2px,transparent 2px, transparent 10px,rgb(33,33,33) 10px, rgb(33,33,33) 11px,transparent 11px, transparent 21px),repeating-linear-gradient(45deg, rgb(47,47,47) 0px, rgb(47,47,47) 4px,transparent 4px, transparent 8px),linear-gradient(90deg, rgb(33,33,33),rgb(33,33,33));
+    border-radius: 7px;
+    cursor: pointer;
+    
+}
+
+ button:hover {
+    background-image: radial-gradient(circle at center center,
+     rgb(241, 195, 19),
+     rgb(244, 150, 32),
+     rgb(246, 105, 45),
+     rgb(249, 59, 57),
+     rgb(251, 14, 70));
+    
+}
+
+.match button:focus {
+    transform: scale(1.2);
+}
+
+.match {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s ease 0.5s;
+}
+
+.winner {
+    color: rgb(233, 227, 227);  
+    text-align: center;
+    font-size: 50px;
+}
+
+.player-hand, .computer-hand {
+    transform: scale(0.5);
+}
+
+.hands, 
+.options {
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+}
+
+.player-hand {
+    transform: rotateY(180deg)   scale(0.5);;
+}
+
+div.fadeOut {
+    opacity: 0;
+    pointer-events: none;
+}
+
+div.fadeIn{
+    opacity: 1;
+    pointer-events: all;
+}
+
+@keyframes shakePlayer {
+    0%{
+        transform: rotateY(180deg) translateY(0px);
+    }
+    15% {
+        transform: rotateY(180deg) translateY(-50px);
+    }
+    25% {
+        transform: rotateY(180deg) translateY(0px);
+    }
+    35% {
+        transform: rotateY(180deg) translateY(-50px);
+    }
+    50% {
+        transform: rotateY(180deg) translateY(0px);
+    }
+    65% {
+        transform: rotateY(180deg) translateY(-50px);
+    }
+    75% {
+        transform: rotateY(180deg) translateY(0px);
+    }
+    85% {
+        transform: rotateY(180deg) translateY(-50px);
+    }
+    100% {
+        transform: rotateY(180deg) translateY(0px);
+    }
+}
+
+@keyframes shakeComputer {
+    0%{
+        transform: translateY(0px);
+    }
+    15% {
+        transform: translateY(-50px);
+    }
+    25% {
+        transform: translateY(0px);
+    }
+    35% {
+        transform: translateY(-50px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    65% {
+        transform: translateY(-50px);
+    }
+    75% {
+        transform: translateY(0px);
+    }
+    85% {
+        transform: translateY(-50px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
